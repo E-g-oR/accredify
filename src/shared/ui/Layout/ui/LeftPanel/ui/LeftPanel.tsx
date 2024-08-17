@@ -1,8 +1,8 @@
-import React, { FC } from "react";
+import { FC } from "react";
 
 import { SideNavigation } from "shared/ui/SideNavigation";
 
-import logoImg from "./assets/Ellipse 20.png";
+import logoImg from "assets/Ellipse 20.png";
 import { navigationMenuItems } from "../model";
 
 export const LeftPanel: FC = () => {
