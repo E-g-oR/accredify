@@ -1,5 +1,6 @@
 import { IConfig } from "shared/ui/Table";
 import { sampleDocumentData } from "./documentsSampleData";
+import { format } from "date-fns";
 
 export const tableConfig: ReadonlyArray<
   IConfig<(typeof sampleDocumentData.data)[number]>
@@ -7,13 +8,18 @@ export const tableConfig: ReadonlyArray<
   {
     header: "Document name",
     key: "name",
-    render: (item) => <span className={"font-bold"}>{item.document_name}</span>,
+    render: (item) => (
+      <p className={"font-bold max-w-96 line-clamp-1 text-ellipsis"}>
+        {item.document_name}
+      </p>
+    ),
     size: "1fr",
   },
   {
     header: "Received on",
     key: "received",
-    render: (item) => <span>{item.received_on}</span>,
+    render: (item) =>
+      item.received_on && format(item.received_on, "dd MMM yyyy"),
     size: "auto",
   },
   {
