@@ -1,7 +1,8 @@
 import { FC } from "react";
-import { Link } from "react-router-dom";
-import { CircularProgress } from "shared/ui/CircularProgress";
+
+import { Link } from "shared/ui/Link";
 import { WidgetLayout } from "shared/ui/WidgetLayout";
+import { CircularProgress } from "shared/ui/CircularProgress";
 
 export const CareerGoal: FC = () => {
   return (
@@ -15,12 +16,7 @@ export const CareerGoal: FC = () => {
           I want to become a<br />
           <b className={"text-xl"}>Tax Manager</b>
         </span>
-        <Link
-          to={"/insights"}
-          className={"text-sm font-bold capitalize text-primary-500"}
-        >
-          View insights
-        </Link>
+        <Link to={"/insights"}>View insights</Link>
       </div>
     </WidgetLayout>
   );

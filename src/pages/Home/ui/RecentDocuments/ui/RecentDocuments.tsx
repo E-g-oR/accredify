@@ -1,7 +1,9 @@
 import { FC } from "react";
-import { Link } from "react-router-dom";
-import { Table, TableHead, TableRow } from "shared/ui/Table";
+
+import { Link } from "shared/ui/Link";
 import { WidgetLayout } from "shared/ui/WidgetLayout";
+import { Table, TableHead, TableRow } from "shared/ui/Table";
+
 import { sampleDocumentData, tableConfig } from "../model";
 
 export const RecentDocuments: FC = () => {
@@ -9,11 +11,7 @@ export const RecentDocuments: FC = () => {
     <WidgetLayout
       className={"flex-1"}
       title={"Recent documents"}
-      addictionalAction={
-        <Link to={"/documents"} className={"text-primary-500 font-bold"}>
-          View all documents
-        </Link>
-      }
+      addictionalAction={<Link to={"/documents"}>View all documents</Link>}
     >
       <Table config={tableConfig}>
         <TableHead />
