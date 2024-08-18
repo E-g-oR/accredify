@@ -4,9 +4,10 @@ export const WidgetLayout: FC<Props> = ({
   title,
   addictionalAction,
   children,
+  className,
 }) => {
   return (
-    <div>
+    <div className={className}>
       <div className="flex justify-between mb-4 items-baseline">
         <h2 className="text-xl font-bold capitalize">{title}</h2>
         {addictionalAction}
@@ -20,4 +21,5 @@ interface Props {
   title: string;
   addictionalAction?: ReactNode;
   children?: ReactNode;
+  className?: string;
 }
