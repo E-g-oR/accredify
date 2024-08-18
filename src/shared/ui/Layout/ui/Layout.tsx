@@ -10,9 +10,7 @@ export const Layout: FC = () => {
       <div className={"bg-white rounded-l-2xl flex-1"}>
         <AppBar />
         <div className="pt-12 px-36">
-          <div className="border">
-            <Outlet />
-          </div>
+          <Outlet />
         </div>
       </div>
     </div>
