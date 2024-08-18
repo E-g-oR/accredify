@@ -1,16 +1,14 @@
 import React, { FC, useState } from "react";
 import { classNames } from "shared/lib";
+import { Button } from "shared/ui/Button";
 
 export const AccountDropDown: FC = () => {
   const [isOpen, setIsOpen] = useState(false);
   return (
     <div className={"relative"}>
-      <button
-        className={"border rounded p-2 text-sm"}
-        onClick={() => setIsOpen((prev) => !prev)}
-      >
+      <Button isOutlined onClick={() => setIsOpen((prev) => !prev)}>
         Gerald Goh
-      </button>
+      </Button>
       <div
         className={classNames(
           "absolute top-12 right-0 rounded shadow-md bg-white p-3 flex flex-col gap-4 transition",

@@ -1,6 +1,7 @@
 import { IConfig } from "shared/ui/Table";
 import { sampleDocumentData } from "./documentsSampleData";
 import { format } from "date-fns";
+import { Button } from "shared/ui/Button";
 
 export const tableConfig: ReadonlyArray<
   IConfig<(typeof sampleDocumentData.data)[number]>
@@ -25,7 +26,7 @@ export const tableConfig: ReadonlyArray<
   {
     header: "",
     key: "action",
-    render: () => <button>Lick me</button>,
+    render: () => <Button>Lick me</Button>,
     size: "80px",
   },
 ];
