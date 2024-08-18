@@ -1,5 +1,6 @@
 import { FC } from "react";
 import { Link } from "react-router-dom";
+import { WidgetLayout } from "shared/ui/WidgetLayout";
 
 export const Home: FC = () => {
   return (
@@ -10,17 +11,18 @@ export const Home: FC = () => {
           Manage your documents issued by SMU Academy or Track your career goal.
         </p>
       </div>
-      <div>
-        <div className="flex justify-between mb-4">
-          <h2 className="text-xl font-bold capitalize">Recent documents</h2>
-          <Link
-            to={"/documents"}
-            className="text-primary-600 font-bold capitalize"
-          >
-            View all documents
-          </Link>
-        </div>
-        <div className="border rounded-md px-6 py-8">Document name</div>
+      <div className={"gap-7 grid grid-cols-[260px_minmax(900px,_1fr)]"}>
+        <WidgetLayout title={"Career goal"}> your propgress</WidgetLayout>
+        <WidgetLayout
+          title={"Recent documents"}
+          addictionalAction={
+            <Link to={"/documents"} className="text-primary-500 font-bold">
+              View all documents
+            </Link>
+          }
+        >
+          Documents table
+        </WidgetLayout>
       </div>
     </>
   );
