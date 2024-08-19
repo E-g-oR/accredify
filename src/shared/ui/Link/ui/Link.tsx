@@ -7,7 +7,7 @@ export const Link: FC<LinkProps & HTMLProps<HTMLAnchorElement>> = (props) => {
     <RouterLink
       {...props}
       className={classNames(
-        "text-sm font-bold capitalize text-primary-500 hover:text-primary-400 hover:underline underline-offset-2 active:text-primary-700",
+        "text-sm font-bold capitalize text-primary-600 hover:text-primary-400 hover:underline underline-offset-2 active:text-primary-700",
         props.className
       )}
     />

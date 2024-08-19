@@ -10,7 +10,7 @@ export const CircularProgress: FC<Props> = ({
   const width = radius * 2 + strokeWidth * 2;
   return (
     <div className={"flex items-center justify-center"}>
-      <span className={"absolute text-3xl font-bold text-primary-500"}>
+      <span className={"absolute text-3xl font-bold text-primary-600"}>
         {value} %
       </span>
       <svg
@@ -28,7 +28,7 @@ export const CircularProgress: FC<Props> = ({
           fill={"none"}
         />
         <circle
-          className={"stroke-primary-500"}
+          className={"stroke-primary-600"}
           cx={width / 2}
           cy={width / 2}
           r={radius}
