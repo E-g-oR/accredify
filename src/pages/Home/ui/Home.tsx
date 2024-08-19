@@ -9,9 +9,7 @@ import { IResponse } from "shared/model/types/Response";
 import { IUser } from "src/entities/User";
 
 export const Home: FC = () => {
-  const { data, isLoading } = useFetch<IResponse<IUser>>(
-    "https://raw.githubusercontent.com/Phangster/Accredify-FE-Interview-Endpoint/main/user-personal.json"
-  );
+  const { data, isLoading } = useFetch<IResponse<IUser>>("user.json");
   return (
     <>
       <div className={"mb-14"}>

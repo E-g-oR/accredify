@@ -7,7 +7,9 @@ export const useFetch = <Data = unknown, Error = unknown>(url: string) => {
 
   const run = useCallback(() => {
     setIsLoading(true);
-    fetch(url)
+    fetch(
+      `https://raw.githubusercontent.com/Phangster/Accredify-FE-Interview-Endpoint/main/${url}`
+    )
       .then((response) => response.json())
       .then(setData)
       .catch(setError)

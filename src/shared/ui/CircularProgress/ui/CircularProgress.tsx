@@ -2,7 +2,7 @@ import { FC } from "react";
 import { useProgressValue } from "../lib";
 
 export const CircularProgress: FC<Props> = ({
-  value,
+  value = 0,
   radius = 90,
   strokeWidth = 12,
 }) => {

@@ -3,18 +3,28 @@ import { FC } from "react";
 import { Link } from "shared/ui/Link";
 import { WidgetLayout } from "shared/ui/WidgetLayout";
 import { CircularProgress } from "shared/ui/CircularProgress";
+import { useFetch } from "shared/lib";
+import { Show } from "shared/ui/Show";
+import { Skeleton } from "shared/ui/Skeleton";
 
 export const CareerGoal: FC = () => {
+  const { data, isLoading } = useFetch("goals.json");
+  const goal = data?.data[0];
   return (
     <WidgetLayout title={"Career goal"}>
       <div className={"flex flex-col gap-6 items-center text-center"}>
         <span className={"text-sm font-bold text-slate-400"}>
           Your progress
         </span>
-        <CircularProgress value={90} />
+        <CircularProgress value={goal?.progress} />
         <span>
           I want to become a<br />
-          <b className={"text-xl"}>Tax Manager</b>
+          <Show
+            when={!isLoading}
+            fallback={<Skeleton className={"w-full h-7"} />}
+          >
+            <b className={"text-xl"}>{goal?.name}</b>
+          </Show>
         </span>
         <Link to={"/insights"}>View insights</Link>
       </div>
