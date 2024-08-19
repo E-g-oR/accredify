@@ -1,13 +1,18 @@
-import React, { FC, useState } from "react";
+import { FC, useState } from "react";
 import { classNames } from "shared/lib";
+import { Avatar } from "shared/ui/Avatar";
 import { Button } from "shared/ui/Button";
+import Logout from "assets/icons/logout.svg?react";
+
+const username = "Gerald Goh";
 
 export const AccountDropDown: FC = () => {
   const [isOpen, setIsOpen] = useState(false);
   return (
     <div className={"relative"}>
       <Button isOutlined onClick={() => setIsOpen((prev) => !prev)}>
-        Gerald Goh
+        <Avatar username={username} />
+        {username}
       </Button>
       <div
         className={classNames(
@@ -17,9 +22,7 @@ export const AccountDropDown: FC = () => {
       >
         <div className={"p-3 w-48"}>
           <div className="flex items-center gap-3">
-            <div className="flex flex-0 items-center justify-center bg-indigo-600 p-2 rounded-full text-white">
-              GG
-            </div>
+            <Avatar username={username} large />
             <div className="flex-0">
               <p className={"font-bold"}>Gerald Goh</p>
               <p className={"text-slate-500"}>Recipient</p>
@@ -27,7 +30,10 @@ export const AccountDropDown: FC = () => {
           </div>
         </div>
         <div className="border-b" />
-        <button className="p-2 rounded border text-sm">Log out</button>
+        <Button isOutlined>
+          <Logout />
+          Log out
+        </Button>
       </div>
     </div>
   );
