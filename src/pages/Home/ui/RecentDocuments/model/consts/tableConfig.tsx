@@ -2,6 +2,7 @@ import { IConfig } from "shared/ui/Table";
 import { sampleDocumentData } from "./documentsSampleData";
 import { format } from "date-fns";
 import { Button } from "shared/ui/Button";
+import MoreVertical from "assets/icons/more-vertical.svg?react";
 
 export const tableConfig: ReadonlyArray<
   IConfig<(typeof sampleDocumentData.data)[number]>
@@ -26,7 +27,11 @@ export const tableConfig: ReadonlyArray<
   {
     header: "",
     key: "action",
-    render: () => <Button>Lick me</Button>,
+    render: () => (
+      <Button>
+        <MoreVertical />
+      </Button>
+    ),
     size: "80px",
   },
 ];
