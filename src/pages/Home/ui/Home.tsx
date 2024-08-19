@@ -1,8 +1,8 @@
-import { FC } from "react";
+import { FC, useEffect } from "react";
 
 import { CareerGoal } from "./CareerGoal";
 import { RecentDocuments } from "./RecentDocuments";
-import { useFetch } from "shared/lib";
+import { useFetch, useUserStore } from "shared/lib";
 import { Show } from "shared/ui/Show";
 import { Skeleton } from "shared/ui/Skeleton";
 import { IResponse } from "shared/model/types/Response";
@@ -10,6 +10,12 @@ import { IUser } from "src/entities/User";
 
 export const Home: FC = () => {
   const { data, isLoading } = useFetch<IResponse<IUser>>("user.json");
+  const setUser = useUserStore((state) => state.setUser);
+
+  useEffect(() => {
+    setUser(data?.data);
+  }, [data, setUser]);
+
   return (
     <>
       <div className={"mb-14"}>

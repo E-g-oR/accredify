@@ -1,8 +1,8 @@
-import { createContext, Dispatch } from "react";
+import { createContext, Dispatch, SetStateAction } from "react";
 
 interface IPopoverContext {
   isOpen: boolean;
-  setIsOpen: Dispatch<boolean>;
+  setIsOpen: Dispatch<SetStateAction<boolean>>;
 }
 
 export const PopoverContext = createContext<IPopoverContext>({
