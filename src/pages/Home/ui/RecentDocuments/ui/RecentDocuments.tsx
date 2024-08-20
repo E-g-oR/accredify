@@ -2,13 +2,15 @@ import { FC } from "react";
 
 import { Link } from "shared/ui/Link";
 import { useFetch } from "shared/lib";
+import { IDocument } from "src/entities/Document";
 import { WidgetLayout } from "shared/ui/WidgetLayout";
 import { Table, TableHead, TableRow } from "shared/ui/Table";
+import { IResponsePaginated } from "shared/model/types/Response";
 
 import { tableConfig } from "../model";
 
 export const RecentDocuments: FC = () => {
-  const { data } = useFetch("documents.json");
+  const { data } = useFetch<IResponsePaginated<IDocument>>("documents.json");
   return (
     <WidgetLayout
       className={"flex-1"}
