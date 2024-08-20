@@ -1,5 +1,5 @@
 import { FC, HTMLAttributes } from "react";
-import { classNames } from "shared/lib";
+import { classNames } from "../../../lib";
 
 export const Button: FC<Props & HTMLAttributes<HTMLButtonElement>> = ({
   isOutlined = false,
