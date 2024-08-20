@@ -7,14 +7,14 @@ export interface IConfig<T> {
   size: string;
 }
 
-export interface ITableContext<T = unknown> {
+export interface ITableContext<T> {
   gap?: number;
   config: ReadonlyArray<IConfig<T>>;
-  loading: boolean;
+  loading?: boolean;
 }
 
-export const tableContext = createContext<ITableContext>({
+export const tableContext = createContext<ITableContext<unknown>>({
   gap: 0,
   config: [],
-  loading: true,
+  loading: false,
 });

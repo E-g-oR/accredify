@@ -1,9 +1,15 @@
 import { ReactNode } from "react";
 import { IConfig, tableContext } from "./tableContext";
 
-export function Table<T>({ children, ...contextValue }: Props<T>): JSX.Element {
+export function Table<T>({
+  children,
+  config,
+  gap,
+  loading,
+}: Props<T>): JSX.Element {
   return (
-    <tableContext.Provider value={contextValue}>
+    // @ts-expect-error - default config item type T is unknown
+    <tableContext.Provider value={{ config, loading, gap }}>
       {children}
     </tableContext.Provider>
   );
