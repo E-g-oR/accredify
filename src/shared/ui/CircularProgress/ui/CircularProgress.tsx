@@ -9,7 +9,10 @@ export const CircularProgress: FC<Props> = ({
   const { strokeDasharray, strokeDashoffset } = useProgressValue(value);
   const width = radius * 2 + strokeWidth * 2;
   return (
-    <div className={"flex items-center justify-center"}>
+    <div
+      className={"flex items-center justify-center"}
+      data-testid={"circular-progress"}
+    >
       <span className={"absolute text-3xl font-bold text-primary-600"}>
         {value} %
       </span>
@@ -37,6 +40,7 @@ export const CircularProgress: FC<Props> = ({
           strokeDashoffset={strokeDashoffset}
           strokeDasharray={strokeDasharray}
           strokeLinecap={"round"}
+          data-testid={"circular-progress-value-svg"}
         />
       </svg>
     </div>
