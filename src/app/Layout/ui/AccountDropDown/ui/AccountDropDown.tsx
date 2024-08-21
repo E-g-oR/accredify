@@ -1,5 +1,7 @@
 import { FC } from "react";
 
+import { useNavigate } from "react-router-dom";
+
 import { Avatar } from "shared/ui/Avatar";
 import { Button } from "shared/ui/Button";
 import { useUserStore } from "shared/lib";
@@ -7,6 +9,7 @@ import Logout from "assets/icons/logout.svg?react";
 import { Popover, PopoverContent, PopoverTrigger } from "shared/ui/Popover";
 
 export const AccountDropDown: FC = () => {
+  const navigate = useNavigate();
   const user = useUserStore((state) => state.user);
   return (
     <Popover>
@@ -32,7 +35,7 @@ export const AccountDropDown: FC = () => {
           </div>
         </div>
         <div className={"border-b"} />
-        <Button isOutlined>
+        <Button isOutlined onClick={() => navigate("/login")}>
           <Logout />
           Log out
         </Button>
