@@ -1,17 +1,16 @@
 import { FC } from "react";
-import { classNames } from "shared/lib";
-import { Show } from "shared/ui/Show";
+import { classNames } from "../../../lib";
+import { Show } from "../../Show";
 
-export const Avatar: FC<Props> = ({ username = "", picture, large }) => {
-  console.log(username);
-
+export const Avatar: FC<Props> = ({ username = "user", picture, large }) => {
   const letters = username
     .split(" ")
     .map((word) => word[0])
-    .join(" ")
+    .join("")
     .toUpperCase();
   return (
     <div
+      data-testid={"avatar"}
       className={classNames(
         "bg-primary-600 rounded-full flex items-center justify-center relative overflow-hidden",
         large ? "w-12 h-12" : "w-6 h-6"
