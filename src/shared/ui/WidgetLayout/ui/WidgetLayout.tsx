@@ -7,7 +7,7 @@ export const WidgetLayout: FC<Props> = ({
   className,
 }) => {
   return (
-    <div className={className}>
+    <div className={className} data-cy={"cypress-widget-layout"}>
       <div className="flex justify-between mb-4 items-baseline">
         <h2 className="text-xl font-bold capitalize">{title}</h2>
         {addictionalAction}
