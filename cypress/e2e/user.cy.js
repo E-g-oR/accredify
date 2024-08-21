@@ -90,11 +90,11 @@ describe("Home page", () => {
       2
     );
 
-    // 5. When user clicks on account settings dropdown
+    // 4. When user clicks on account settings dropdown
     cy.contains("Jane Chan").click();
-    // 6. And user clicks on log out option
+    // 5. And user clicks on log out option
     cy.contains("Log out").click();
-    // 7. Then user should be logged out from the dashboard
+    // 6. Then user should be logged out from the dashboard
     cy.get("h1").should("have.text", "Log in to Accredify");
   });
 });

@@ -9,8 +9,7 @@
     "lint": "eslint .",
     "preview": "vite preview",
     "test:unit": "jest --watchAll --coverage",
-    "test:cy:open": "cypress open",
-    "test:cy": ""
+    "test:cy": "cypress open"
   },
   "dependencies": {
     "@types/jest": "^29.5.12",
