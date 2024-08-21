@@ -1,7 +1,7 @@
 {
   "data": {
     "id": 1,
-    "name": "John Smith",
+    "name": "John Doe",
     "email": "john.smith@example.com",
     "profile_picture_url": "https://placehold.co/600x400.png",
     "email_verified_at": "2022-01-01 15:38:33.0 Asia/Singapore (+08:00)",

@@ -8,9 +8,14 @@ export function TableRow<T>({ row }: Props<T>) {
     <div
       className={"grid items-center border-b text-sm"}
       style={{ gridTemplateColumns }}
+      data-testid={"table-row"}
     >
       {config.map((column) => (
-        <div key={column.key} className={"px-4 py-5"}>
+        <div
+          data-testid={"table-cell"}
+          key={column.key}
+          className={"px-4 py-5"}
+        >
           {column.render(row)}
         </div>
       ))}

@@ -8,6 +8,7 @@ export const TableHead: FC = () => {
     <div
       className={"grid border-b font-bold text-slate-400 text-sm capitalize"}
       style={{ gridTemplateColumns }}
+      data-testid={"table-head"}
     >
       {config.map((column) => (
         <span key={column.key} className={"pb-5 px-4"}>
